@@ -43,6 +43,7 @@ export default function AuthForm({ mode }: Props) {
       }
     } catch (err: any) {
       setError(err.message);
+      alert(err.message);
     }
 
     setLoading(false);
