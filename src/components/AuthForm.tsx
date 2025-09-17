@@ -7,6 +7,7 @@ import {
   reload,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../components/ui/button"
 
 type Props = {
   mode: "login" | "signup";
@@ -67,13 +68,13 @@ export default function AuthForm({ mode }: Props) {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button
+      <Button variant="outline"
         type="submit"
         disabled={loading}
         className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
       >
         {loading ? "Loading..." : mode === "signup" ? "Sign Up" : "Login"}
-      </button>
+      </Button>
       {error && <p className="text-red-600 text-sm">{error}</p>}
     </form>
   );
