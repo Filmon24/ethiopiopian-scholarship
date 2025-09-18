@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
 import Landing from "./pages/Landing";
@@ -9,6 +14,7 @@ import Roadmap from "./pages/Roadmap";
 import Scholarships from "./pages/Scholarships";
 import ScholarshipDetail from "./pages/ScholarshipDetail";
 import Support from "./pages/Support";
+import Footer from "./components/Footer";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const [user, loading] = useAuthState(auth);
@@ -67,6 +73,7 @@ export default function App() {
           }
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }
